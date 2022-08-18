@@ -1,0 +1,22 @@
+// day01 - write Hello World
+
+// class component that show hello world
+
+import React from "react";
+// react.comp is class which contain capabilities like jsx and other
+
+// linking css file
+import "./index.css"
+
+class App extends React.Component {
+  // constructor(){
+
+  // }
+
+  render(){
+   // 1st project create hello word
+  return <h1>Hello World</h1>;
+  }
+}
+
+export default App;
