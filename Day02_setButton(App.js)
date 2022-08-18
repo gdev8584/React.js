@@ -1,0 +1,99 @@
+// day01 - write Hello World
+// day02 - concept of set and counter each click
+
+
+
+
+// class component that show hello world
+
+import React from "react";
+// react.comp is class which contain capabilities like jsx and other
+
+// linking css file
+import "./index.css"
+
+class App extends React.Component {
+  // constructor(){
+
+  // }
+
+  // render(){
+  //   // 1st project create hello word
+  //   // return <h1>Hello World</h1>;
+  // }
+
+
+  // 2nd project count no. buttom
+
+  // A way where we can maintain the variables and it automitically
+
+  //updates the UI when changed
+constructor(){
+  // always call super
+
+  super(); // super means calling all the method and function of parents class.
+
+  // define state which is an object
+  this.state = {
+    // now give all the variable name in the form of key:value pair
+    counter:0,
+    shouldShowCounter: false
+  }
+}
+
+// access counter by this.state.counter
+// above comment is called Interpolation---> Interpolate the value.
+ 
+
+// style need to always javascript
+  render(){
+    return (
+    <div>
+    {/* Show the current counter variable */}
+    {/* Whenever you want to write, some js/dynamic, wrap it in {} */}
+    {/*Anything that should be computed */}
+    <h1 style={{
+      //camel cased property
+      backgroundColor: "green",
+      color: "white",
+    }}>{this.state.counter}</h1>
+   
+
+
+    <button className="btn" onClick={()=>{
+      // increment the counter variable
+
+      /*this.state.counter++;
+      //This is not allowed in React
+      // state is immutable in React*/
+      this.setState({
+        //pass only those key that you need to change
+        counter:this.state.counter+1,
+      })
+      // pass an object in setState//whenever state variable changes in react the node that are dependent on that variable are need to update
+    }}
+    >
+    Increment</button>
+    <button onClick={()=>{
+      // increment the counter variable
+
+      /*this.state.counter++;
+      //This is not allowed in React
+      // state is immutable in React*/
+      if(this.state.counter>0){
+      this.setState({
+        //pass only those key that you need to change
+        
+        counter:this.state.counter-1,
+      })
+      }
+      // pass an object in setState//whenever state variable changes in react the node that are dependent on that variable are need to update
+    }}
+    >
+    Dicrement</button>
+    </div>
+    );
+  }
+}
+
+export default App;
