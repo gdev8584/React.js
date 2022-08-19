@@ -1,0 +1,57 @@
+// day01 - write Hello World
+// day02 - concept of set and counter each click
+// day03 - remove div which cover extra space-
+//react.fragment(line-52)
+
+
+
+// class component that show hello world
+
+import React from "react";
+// react.comp is class which contain capabilities like jsx and other
+
+// linking css file
+import "./index.css"
+import Counter from "./components/Counter";    // use of import
+
+class App extends React.Component {
+  // constructor(){
+
+  // }
+
+  // render(){
+  //   // 1st project create hello word
+  //   // return <h1>Hello World</h1>;
+  // }
+
+
+  // 2nd project count no. buttom
+
+  // A way where we can maintain the variables and it automitically
+
+  //updates the UI when changed
+
+
+// access counter by this.state.counter
+// above comment is called Interpolation---> Interpolate the value.
+ 
+// style need to always javascript object always
+  render(){
+
+    //return<Counter/><Counter/> // it crate error because here we return one child
+    return (
+    // <> also called react.fragment
+    <> 
+      <Counter/>
+      <Counter/>
+    </>
+
+    );
+
+    // In cases where you need not to write anything 
+    //between closing and opening tag
+    return <Counter></Counter>
+  }
+}
+
+export default App;
