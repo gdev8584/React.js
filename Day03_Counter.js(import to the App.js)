@@ -1,0 +1,78 @@
+//File Name Start with a capita letter; It is a component
+// It is a component when it is responsible to show some part of application on screen
+//Extension is .js
+
+/*steps for React:
+1. Import Declare class
+2. Exend React.Component
+3. render method
+4.return from the render
+5.export*/
+
+import React from "react";
+
+class Counter extends React.Component{
+    constructor(){
+        // always call super
+      
+        super(); // super means calling all the method and function of parents class.
+      
+        // define state which is an object
+        this.state = {
+          // now give all the variable name in the form of key:value pair
+          counter:0,
+          shouldShowCounter: false
+        }
+      }
+
+
+    render(){
+        return(
+            <React.Fragment>
+    {/* Show the current counter variable */}
+    {/* Whenever you want to write, some js/dynamic, wrap it in {} */}
+    {/*Anything that should be computed */}
+    <h1 style={{
+      //camel cased property
+      backgroundColor: "green",
+      color: "white",
+    }}>{this.state.counter}</h1>
+   
+
+
+    <button className="btn" onClick={()=>{
+      // increment the counter variable
+
+      /*this.state.counter++;
+      //This is not allowed in React
+      // state is immutable in React*/
+      this.setState({
+        //pass only those key that you need to change
+        counter:this.state.counter+1,
+      })
+      // pass an object in setState//whenever state variable changes in react the node that are dependent on that variable are need to update
+    }}
+    >
+    Increment</button>
+    <button className="btn1" onClick={()=>{
+      // increment the counter variable
+
+      /*this.state.counter++;
+      //This is not allowed in React
+      // state is immutable in React*/
+      if(this.state.counter>0){
+      this.setState({
+        //pass only those key that you need to change
+        
+        counter:this.state.counter-1,
+      })
+      }
+      // pass an object in setState//whenever state variable changes in react the node that are dependent on that variable are need to update
+    }}
+    >
+    Dicrement</button>
+    </React.Fragment>
+    );
+    }
+}
+ export default Counter;
